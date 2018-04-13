@@ -1,0 +1,28 @@
+﻿@model List<String>
+@{
+    ViewBag.Title = "FicherosAzure";
+}
+
+<h2>Ficheros Azure</h2>
+
+
+@if (Model != null)
+{
+    <table class="table table-bordered">
+        @foreach(String fic in Model)
+        {
+        <tr>
+            @if (fic.EndsWith("xml"))
+            {
+            <td>@Html.ActionLink(fic,"PeliculasEscenas","AzureFile",
+               new { nombrefichero=fic},null)</td>
+            }
+            else
+            {
+            <td>@fic</td>
+            }
+        </tr>
+
+        }
+    </table>
+}

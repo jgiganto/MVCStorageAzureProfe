@@ -10,6 +10,7 @@ namespace MVCStorageAzureProfe.Controllers
     {
         public ActionResult Index()
         {
+            
             return View();
         }
 
@@ -26,5 +27,7 @@ namespace MVCStorageAzureProfe.Controllers
 
             return View();
         }
+
+
     }
 }

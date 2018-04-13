@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MVCStorageAzureProfe.Models.Pelicula>
+
+@{
+    ViewBag.Title = "PeliculasEscenas";
+}
+
+<h2>Peliculas file XML Azure</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+          TITULO
+        </th>
+        <th>
+            DESCRIPCION
+        </th>
+        <th>
+            
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.Titulo
+        </td>
+        <td>
+            @item.Descripcion
+        </td>
+        <td>
+           <img src="@item.Poster" style="height:80px;width:60px" />
+        </td>
+        
+    </tr>
+    <tr>
+        <td>
+            <table class="table table-bordered" style="background-color:antiquewhite">
+                @foreach(var esc in item.Escenas)
+                {
+                    <tr>
+                        <td>@esc.TituloEscena</td>
+                        <td><img src="@esc.Imagen" style="width:100px;height:80px;"/></td>
+                    </tr>
+                }
+
+            </table>
+        </td>
+    </tr>
+}
+
+</table>
